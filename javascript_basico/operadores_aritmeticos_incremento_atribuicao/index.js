@@ -1,21 +1,21 @@
 /* Aritméticos 
 
-    + Adição e Concatenação
-    - Subtração
-    * Multiplicação
-    / Divisão
-    ** Exponenciação
-    % Resto da divisão
-    =  atribuição
-    ++ incrementa o valor e atribui o valor na variável 
-    -- decrementa o valor e atribui o valor na variável 
-    NaN not a number
+*   + Adição e Concatenação
+*   - Subtração
+*   * Multiplicação
+*   / Divisão
+*   ** Exponenciação
+*   % Resto da divisão
+*   =  atribuição
+*   ++ incrementa o valor e atribui o valor na variável 
+*   -- decrementa o valor e atribui o valor na variável 
+*   NaN not a number
 
-    //Prescedência de calculo.
-    1. ()
-    2. **
-    3. * / %
-    4. + -
+*    //Prescedência de calculo.
+*    ()
+*    **
+*    * / %
+*    + -
 */
 
 // Concatenação número com string
