@@ -168,3 +168,16 @@ console.log('tem ' + altura +' de altura e seu IMC é de ' + IMC.toFixed(2) + '.
 console.log(`${nome} ${sobrenome} tem ${idade} anos, pesa ${peso}kg, nasceu no ano de ${anoNascimento}`);
 console.log(`tem ${alturaCentimetro} de altura e seu IMC é de ${indiceMassaCorporal.toFixed(2)}.`);
 ```
+
+#### Usando o tipo var;
+
+##### Não é aconselhável usar var, poís ela permite o declara quantas vezes quiser a mesma variável. 
+```javascript
+var nome = 'Gabriel';
+var nome = 'Navas';
+```
+
+##### Não é aconselhável variável sem let ou const, (muito menos var), pois criará uma variavel global no sistema.
+```javascript
+variavelGlobal = 'sou Global';
+```
