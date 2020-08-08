@@ -42,3 +42,20 @@ const frase = 'Eu nome é ' + nome + '. Estou aprendendo JavasScript às ' + hor
 
 console.log(frase);
 ```
+
+
+#### Tipos de comentário no JS
+
+```javascript
+// sou um comentario
+
+console.log('Hello World');
+
+/* 
+    Sou outro comentário 
+    blablabla
+*/
+
+console.log('Hello World' /*de novo*/);
+```
+
