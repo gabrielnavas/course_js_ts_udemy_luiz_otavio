@@ -209,25 +209,32 @@ console.log(typeof verdade); // boolean
 #### Operadores, aritmeticos, incremento, atribuicao e conversores
 
 ##### Operadores Aritméticos 
-  
-*    + Adição e Concatenação
-*    - Subtração
-*    * Multiplicação
-*    / Divisão
-*    ** Exponenciação
-*    % Resto da divisão
-* =  atribuição
-* ++ incrementa o valor e atribui o valor na variável 
-* -- decrementa o valor e atribui o valor na variável 
-* += incremento quando o valor é maior que 1 (+= -= /= */)
-* NaN not a number
 
+```javascript
+/*
+    + Adição e Concatenação
+    - Subtração
+    * Multiplicação
+    / Divisão
+    ** Exponenciação
+    % Resto da divisão
+    =  atribuição
+    ++ incrementa o valor e atribui o valor na variável 
+    -- decrementa o valor e atribui o valor na variável 
+    += incremento quando o valor é maior que 1 (+=  -=  /=  *=)
+    NaN not a number
+*/
+```  
 
 ##### Prescedência de calculo.
-* 1. ()
-* 2. **
-* 3. * / %
-* 4. + -
+```javascript
+/*
+    1. ()
+    2. **
+    3. * / %
+    4. + -
+*/
+```
 
 ```javascript
 // Concatenação número com string
