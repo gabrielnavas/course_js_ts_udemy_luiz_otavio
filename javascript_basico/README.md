@@ -59,3 +59,10 @@ console.log('Hello World');
 console.log('Hello World' /*de novo*/);
 ```
 
+
+#### navegador vs node html + javascript
+
+```javascript
+
+```
+
