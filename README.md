@@ -64,9 +64,9 @@ Testes automatizados são de extrema importância para qualquer desenvolvedor. A
 
 Uma outra novidade deste curso é que temos uma seção inteira sobre padrões de projeto (Design patterns). O foco aqui é aprender os padrões de projeto da GoF (que são os mais clássicos e mais relevantes atualmente).
 
-##### Listagem do conteúdo principal
+#### Listagem do conteúdo principal
 
-#### Lista do que será ensinado nas seções:
+##### Lista do que será ensinado nas seções:
 
     Instalação dos programas utilizados ao longo do curso (Node, Visual Studio Code e mais)
 
