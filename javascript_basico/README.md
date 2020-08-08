@@ -66,3 +66,50 @@ console.log('Hello World' /*de novo*/);
 
 ```
 
+#### variaveis
+
+
+##### Tipos de declações
+
+```javascript
+let variavelQueMuda = 'gabriel';
+variavelQueMuda = 'navas';
+
+const variavelImutavel = 'joana';
+// variavelImutavel = 'joão'; => assingment to const variable
+
+// recomendado não utilizar.
+var poucoUsada = 'valor'; 
+```
+
+##### Não podemos criar variaveis com palavras reservadas.
+
+```javascript
+let if; // => SyntaxError: Unexpected token 'if'.
+const console; // pode dar problema ao decorrer da aplicação.
+```
+
+##### Não podemos criar variaveis iniciando um números.
+
+```javascript
+let 1nome = 10; // => SyntaxError: Unexpected token 'if'.
+let nome1 = 10; // isso é permitido, já que não é iniciado com um número.
+```
+
+##### Não pode ter espaços nas variáveis.
+
+```javascript
+let variavel um;
+let variavelUm; //isso é permitido. camelCase
+```
+
+
+##### Case-sensitive.
+
+```javascript
+let variavelum = 10;
+let variavelUm = 20; //variavelum é diferente de variavelUm
+
+console.log(variavelum); //10
+console.log(variavelUm); //20
+```
