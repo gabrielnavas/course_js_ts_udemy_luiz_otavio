@@ -37,3 +37,26 @@ let variavelUm = 20; //variavelum é diferente de variavelUm
 
 console.log(variavelum); //10
 console.log(variavelUm); //20
+
+
+// Constantes
+
+const sobrenome = 'Silva';
+// sobrenome = 'Castro'; //TypeError: Assignment to constant variable.
+
+
+// Fazendo contas
+// + - * /
+
+const primeiroNumero = 5;
+const segundoNumero = 10;
+const conta = primeiroNumero + segundoNumero;
+
+console.log(conta);
+
+// Ver tipo de dado
+const souString = 'Gabriel';
+const souNumber = 22;
+
+console.log(typeof souString);
+console.log(typeof souNumber);

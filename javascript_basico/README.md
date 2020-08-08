@@ -113,3 +113,58 @@ let variavelUm = 20; //variavelum é diferente de variavelUm
 console.log(variavelum); //10
 console.log(variavelUm); //20
 ```
+
+
+#### Constantes
+
+##### Não é possível alterar valor de constantes.
+```javascript
+const sobrenome = 'Silva';
+sobrenome = 'Castro'; //TypeError: Assignment to constant variable.
+```
+
+##### Fazendo contas
+
+```javascript
+// + - * /
+
+const primeiroNumero = 5;
+const segundoNumero = 10;
+const conta = primeiroNumero + segundoNumero;
+
+console.log(conta); // 15
+```
+
+#### Ver tipo de dado
+
+```javascript
+const souString = 'Gabriel';
+const souNumber = 22;
+
+console.log(typeof souString); // string
+console.log(typeof souNumber); // number
+```
+
+#### Exercício let e const
+##### Imprimir ano, idade, peso, altura e peso.
+
+```javascript
+const nome = 'Gabriel';
+const idade = 27;
+const altura = 1.85;
+const peso = 75;
+const IMC = peso/altura;
+
+console.log(nome + ' tem ' + idade + ' anos, pesa ' + peso + 'kg.');
+
+// IMC.toFixed(2) é para ter apenas 2 números após a vírgula.
+console.log('tem ' + altura +' de altura e seu IMC é de ' + IMC.toFixed(2) + '.');
+
+```
+
+##### Melhor Utilizar template string
+
+```javascript
+console.log(`${nome} ${sobrenome} tem ${idade} anos, pesa ${peso}kg, nasceu no ano de ${anoNascimento}`);
+console.log(`tem ${alturaCentimetro} de altura e seu IMC é de ${indiceMassaCorporal.toFixed(2)}.`);
+```
