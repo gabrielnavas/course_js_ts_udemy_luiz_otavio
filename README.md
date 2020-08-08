@@ -68,38 +68,38 @@ Princípios SOLID
 
 ##### Lista do que será ensinado nas seções:
 
-    * Instalação dos programas utilizados ao longo do curso (Node, Visual Studio Code e mais)
+* Instalação dos programas utilizados ao longo do curso (Node, Visual Studio Code e mais)
 
-    * Javascript básico (variáveis e coisas básicas de programação)
+* Javascript básico (variáveis e coisas básicas de programação)
 
-    * Javascript com lógica de programação (estruturas condicionais, de repetição e mais)
+* Javascript com lógica de programação (estruturas condicionais, de repetição e mais)
 
-    * Javascript orientado a objetos (classes, funções construtoras, factory functions, e mais)
+* Javascript orientado a objetos (classes, funções construtoras, factory functions, e mais)
 
-    * Javascript funcional (seções específicas para funções, arrays e objetos)
+* Javascript funcional (seções específicas para funções, arrays e objetos)
 
-    * Javascript assíncrono (com promises, ajax, axios e fetch API)
+* Javascript assíncrono (com promises, ajax, axios e fetch API)
 
-    * Webpack e Babel (para uso de recursos modernos em navegadores mais antigos)
+* Webpack e Babel (para uso de recursos modernos em navegadores mais antigos)
 
-    * Node.js (básico de Node + Express e MongoDB)
+* Node.js (básico de Node + Express e MongoDB)
 
-    * Projeto agenda (Um projeto real utilizando tudo o que foi descrito anteriormente)
+* Projeto agenda (Um projeto real utilizando tudo o que foi descrito anteriormente)
 
-    * Deploy - Criar, configurar e manter um servidor Linux (inclui configuração de várias tecnologias diferentes)
+* Deploy - Criar, configurar e manter um servidor Linux (inclui configuração de várias tecnologias diferentes)
 
-    * Api rest - Criar uma API Rest do zero usando Express, JWT e o Sequelize (com MariaDB/MySQL).
+* Api rest - Criar uma API Rest do zero usando Express, JWT e o Sequelize (com MariaDB/MySQL).
 
-    * React JS Básico - Nesta seção, criaremos uma lista de tarefas utilizando o React JS e o localStorage do navegador.
+* React JS Básico - Nesta seção, criaremos uma lista de tarefas utilizando o React JS e o localStorage do navegador.
 
-    * React JS Avançado - React Hooks, Redux + Redux Saga, Autenticação com JWT, Redux Persist e muito mais.
+* React JS Avançado - React Hooks, Redux + Redux Saga, Autenticação com JWT, Redux Persist e muito mais.
 
-    * Bônus: Expressões Regulares (Regex)
+* Bônus: Expressões Regulares (Regex)
 
-    * TypeScript - Você não precisa comprar outro curso para aprender TypeScript
+* TypeScript - Você não precisa comprar outro curso para aprender TypeScript
 
-    * Princípios da programação orientada a objetos e princípios S.O.L.I.D (SOLID)
+* Princípios da programação orientada a objetos e princípios S.O.L.I.D (SOLID)
 
-    * Testes automatizados com o Jest
+* Testes automatizados com o Jest
 
-    * Bônus: Padrões de projeto (Design patterns)
+* Bônus: Padrões de projeto (Design patterns)
