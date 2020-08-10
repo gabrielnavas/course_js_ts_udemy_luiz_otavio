@@ -322,3 +322,32 @@ console.log('Convertido: ', convertido);
         alert(`Resultado: ${conta}`);
     }
 ```
+
+
+#### Trocando valores de variáveis
+
+##### Modo antigo 
+
+```javascript
+let varA = 'A'; //B
+let varB = 'B'; //C
+let varC = 'C'; //A
+
+const auxiliarA = varA;
+varA = varB;
+varB = varC;
+
+varC = auxiliarA;
+
+console.log(varA, varB, varC);
+```
+
+```javascript
+let varA = 'A'; //B
+let varB = 'B'; //C
+let varC = 'C'; //A
+
+[varA, varB, varC] = [varB, varC, varA];
+
+console.log(varA, varB, varC); // B C A
+```

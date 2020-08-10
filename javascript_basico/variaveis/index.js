@@ -60,3 +60,24 @@ const souNumber = 22;
 
 console.log(typeof souString);
 console.log(typeof souNumber);
+
+
+
+// Exercício de troca de valores
+
+let varA = 'A'; //B
+let varB = 'B'; //C
+let varC = 'C'; //A
+
+// const auxiliarA = varA;
+// varA = varB;
+// varB = varC;
+
+// varC = auxiliarA;
+
+// console.log(varA, varB, varC);
+
+
+[varA, varB, varC] = [varB, varC, varA];
+console.log(varA, varB, varC);
+
