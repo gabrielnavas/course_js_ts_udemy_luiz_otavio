@@ -300,11 +300,25 @@ console.log(num12 * '12'); // 120
 const variavelInt = '12';
 const variavelFloat = '12.5';
 
-const convertido = parseInt(variavelInt);
+const convertido = parseInt(variavelInt);s
 const convertidoFloat = parseInt(variavelFloat);
 
 // Number(numero) não tem distinção, se é float ou inteiro
 console.log(Number('12.65'));
 
 console.log('Convertido: ', convertido);
+```
+
+#### Alert, confirm e prompt
+
+```javascript
+    if(confirm('Deseja fazer conta?')) {
+        
+        const num1 = prompt('Digite um número.');
+        const num2 = prompt('Digite outro número.');
+        
+        const conta = parseInt(num1) + parseInt(num2);
+        
+        alert('Resultado: ' + conta);
+    }
 ```
