@@ -351,3 +351,105 @@ let varC = 'C'; //A
 
 console.log(varA, varB, varC); // B C A
 ```
+
+
+
+#### Strings
+
+##### Usando aspas dentro de string
+
+```javascript
+let strComAspas1 = "Gabriel foi 'pescar'";
+let strComAspas2 = "Gabriel foi \"pescar\"";
+
+console.log(strComAspas1); // "Gabriel foi 'pescar'"
+console.log(strComAspas2); // "Gabriel foi "pescar""
+```
+
+##### Fora do range da string
+```javascript
+console.log(strComAspas1[-1]); // undefined
+console.log(strComAspas1[20]); // undefined
+
+console.log(strComAspas1.charAt(-1)); // '' valor vazio
+```
+
+##### Pegando código referente a tabela ASCII
+```javascript
+console.log(strComAspas1.charCodeAt(1)); // a == 97 na tabela ASCII
+```
+
+
+##### Concatenar usando função de string
+```javascript
+console.log(strComAspas1.concat(' ', 'no', ' ', 'rio', '.')); // a == 97 na tabela ASCII
+
+// use template string, é melhor. :)
+```
+
+##### Pegar o index (posição) que começa a palavra foi
+```javascript
+console.log(strComAspas1.indexOf('foi'));
+console.log(strComAspas1.indexOf('agora')); // -1 agora não existe
+```
+
+##### Exemplo de expessão regular
+
+```javascript
+const arr = "Um texto legal".match(/[a-z]/g); //retorna um array de todas letra minúscula.
+```
+
+##### Substituição de palavras e letras
+
+```javascript
+console.log("uma frase legal".replace('legal', 'chata'));
+
+// funciona usando expressão regular também.
+console.log("uma frase legal".replace(/legal/, 'chata'));
+```
+
+##### Tamanho de uma string
+```javascript
+console.log("uma frase legal com tamanho :)".length);
+```
+
+##### Pegando pedaços de string
+
+```javascript
+//posição 1 até a 4
+console.log("uma frase legal".slice(1, 5)); // ma f
+
+// posição 1 até 5
+console.log("uma frase legal".substr(1, 5)); //ma fr
+
+// posição 1 ate 4
+console.log("uma frase legal".substring(1, 5)); //ma f
+
+// é possivel pegar invertido também
+console.log("uma frase legal".slice(-5, -1)); // lega
+
+
+// o slice escreve menos, veja o exemplo do substring
+console.log("uma frase legal".substring("uma frase legal".length - 5, "uma frase legal".length - 1)); 
+```
+
+##### Dividir a string em pedaços
+
+```javascript
+"O rato roeu a roupa da rainha".split(' '); // ['O', 'rato', 'roeu', 'a', 'roupa', 'da', 'rainha']
+
+// É possível exibir somente 2 palavras
+"O rato roeu a roupa da rainha".split(' ', 2); // ['O', 'rato']
+```
+
+
+##### Maiúscula e minúscula
+
+```javascript
+
+// Maiúscula
+console.log("sou uma frase em upper case".toUpperCase());
+
+// Minúscula
+console.log("sou uma frase em lower case".toLowerCase());
+```
