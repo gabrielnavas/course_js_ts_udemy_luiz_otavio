@@ -608,3 +608,126 @@ console.log(!!valor === true); // é true (CUIDADO COM ISSO), números dividido 
 // Quando o número é muito grande, pode retornar infinity também
 console.log(100 / 0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001); //Infinity
 ```
+
+
+#### Arrays
+
+##### Acessando posições do array
+
+```javascript
+const alunos = ['Luiz', 'Maria', 'João'];
+const muitasCoisas = ['Gabriel', true, [1, 2, 3], 4.55]; 
+
+
+console.log(alunos); // [ 'Luiz', 'Maria', 'João' ]
+console.log(muitasCoisas); // [ 'Gabriel', true, [ 1, 2, 3 ], 4.55 ]
+
+console.log(alunos[2]); // 'João'
+
+// Acessando posição do elemento do array
+console.log(alunos[2][1]); // 'o'
+```
+
+##### Mudar e adicionar elementos
+
+```javascript
+alunos[2] = 'Ricardo';
+alunos[3] = 'Luiza';
+alunos[alunos.length] = 'Joaquina';
+alunos[alunos.length] = 'Miguel';
+alunos[alunos.length] = 'Rafael';
+
+console.log(alunos); //[ 'Luiz', 'Maria', 'Ricardo', 'Luiza' ]
+```
+
+#### Adicionando usando funções 
+
+
+```javascript
+
+// Adicionar no final
+alunos.push('Juquinha');
+alunos.push('Fábio');
+
+console.log(alunos);
+alunos.push('Juquinha');
+alunos.push('Fábio');
+
+console.log(alunos);
+/*
+[
+  'Luiz',     'Maria',
+  'Ricardo',  'Luiza',
+  'Joaquina', 'Juquinha',
+  'Fábio'
+] */
+
+// Adicionar no inicio, devo mover todos os elementos para frente ou
+alunos.unshift('Larissa');
+console.log(alunos);
+/*
+[
+  'Larissa',  'Luiz',
+  'Maria',    'Ricardo',
+  'Luiza',    'Joaquina',
+  'Juquinha', 'Fábio'
+]
+*/
+```
+
+##### Remover elementos do final do array 
+
+```javascript
+const elementoRemovido = alunos.pop();
+console.log(elementRemovido); // 'Fábio'
+console.log(alunos);
+/*
+[
+    'Larissa',  'Luiz',
+    'Maria',    'Ricardo',
+    'Luiza',    'Joaquina',
+    'Juquinha'
+]
+*/
+```
+
+##### Remover elemento do início do array
+
+```javascript
+// Remove do início
+const elementoInicio = alunos.shift();
+console.log(elementoInicio); // Larissa
+console.log(alunos); // [ 'Luiz', 'Maria', 'Ricardo', 'Luiza', 'Joaquina', 'Juquinha' ]
+```
+
+##### Remover elemento de uma posição
+```javascript
+const carros = ['Ferrari', 'Fusca', 'Gol', 'Saveiro', 'Pampa'];
+
+// dessa forma é ruim
+delete carros[1];
+console.log(carros); //[ 'Ferrari', <1 empty item>, 'Gol', 'Saveiro', 'Pampa' ]
+
+// Assim é melhor
+const indexRemover = carros.indexOf('Gol');
+carros.splice(indexRemover, 1); //[ 'Ferrari', <1 empty item>, 'Saveiro', 'Pampa' ]
+console.log(carros);
+```
+
+##### Fatiar o array em elementos
+
+```javascript
+// Fatiar, não altera o array, apenas retorna a fatia
+console.log(alunos.slice(2, 3)); // [ 'Ricardo' ]
+```
+
+##### Tipo do array
+
+```javascript 
+// array em JS é um objeto
+console.log(typeof carros); //object
+
+// E também é um array
+console.log(carros instanceof Array); //true
+```
+
