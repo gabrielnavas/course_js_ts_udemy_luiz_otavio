@@ -63,7 +63,5 @@ console.log("O rato roeu a roupa da rainha".split(' ', 2));
 // Maiúscula
 console.log("sou uma frase em upper case".toUpperCase());
 
-
 // Minúscula
 console.log("sou uma frase em lower case".toLowerCase());
-
