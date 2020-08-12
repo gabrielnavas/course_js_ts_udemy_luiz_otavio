@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+    --primary-color: rgb(12, 121, 129);
+    --primary-color-darker: rgb(7, 78, 83);
+    --primary-color-on: rgb(6, 24, 26);
+}
+
+* {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+ul, li {
+    border: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+    font-family: 'Open sans', sans-serif;
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+
+body > section > section {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+body > section > setion ul {
+    font-size: 0.8em;
+}
+
+body > section > section > div {
+    width: 280px;
+    display: inline-block;
+}
+
+body > section > section > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 640px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+
+form input, form label, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form input {
+    font-size: 24px;
+    height: 50px;
+    padding: 0 20px;
+}
+
+form input:focus {
+    /* outline: 1px solid var(--primary-color); */
+    border-radius: 7px;
+    border-color: var(--primary-color);
+}
+
+form button {
+    border: none;
+    background-color: var(--primary-color);
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 700;
+    height: 50px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--primary-color-darker);
+}
+
+form button:active {
+    background-color: var(--primary-color-on);
+}
+
+
+@media(max-width: 450px) {
+    .container {
+        width: 90%;
+    }
+
+    section > h1 {
+        text-align: center;
+    }
+
+    section.container > section div h4 {
+        width: 100%;
+        text-align: left;
+        padding-left: 10%;
+    }
+
+    
+    body > section > section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    body > section > section div, 
+    body > section > section div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        
+        width: 100%;
+        padding-left: 10%;
+    }
+}
