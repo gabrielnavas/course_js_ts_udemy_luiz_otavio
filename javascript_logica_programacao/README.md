@@ -476,3 +476,7 @@ function switchSemBreak(diaSemana) {
 const diaSemanaRetornada = switchSemBreak(diaSemana);
 console.log(diaSemana, diaSemanaString); //2 Terça-Feira
 ```
+
+## Exercício Switch/Case
+
+![Alt ou título da imagem](URL da imagem)
