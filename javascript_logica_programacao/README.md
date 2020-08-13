@@ -235,3 +235,36 @@ if(6 > 1 && 6 < 12) {
 #### Exercício de IMC GABRIEL, Gif de como ficou
 
 ![alt-text](https://github.com/gabrielnavas/course_js_ts_udemy_luiz_otavio/blob/master/javascript_logica_programacao/tabela_imc_gabriel/usando.gif)
+
+
+## Operador ternário
+
+```javascript
+// condicao ? a : b;
+
+const pontuacaoUsuario = 999;
+
+const tipoUsuario = pontuacaoUsuario >= 1000 ? 'Usuario Vip' : 'Usuário Comum'; 
+```
+
+##### Setando um valor padrão
+
+```javascript
+//Setando valor padrão
+const corUsuario = null;
+const corPadrao = corUsuario || 'Rosa';
+console.log(corPadrao); // Rosa
+```
+
+
+##### Um pouco mais complexo, um ternário dentro de outro ternário
+
+```javascript
+const tipoUsuarioComplexo = pontuacaoUsuario > 1000 ?
+    'Usuário vip' :
+    pontuacaoUsuario === 999 ?
+        'Esse user é 999' :
+        'Esse user não é 999';
+
+console.log(tipoUsuarioComplexo); // Esse user é 999
+```
