@@ -479,4 +479,4 @@ console.log(diaSemana, diaSemanaString); //2 Terça-Feira
 
 ## Exercício Switch/Case
 
-![Alt ou título da imagem](URL da imagem)
+![Imagem do resultado](https://github.com/gabrielnavas/course_js_ts_udemy_luiz_otavio/blob/master/javascript_logica_programacao/exercicio_switch_date_gabriel/img_exercicio_switch_case_gabriel.png)
