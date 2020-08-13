@@ -9,7 +9,7 @@
         const peso = Number(elemPeso.value);
         const altura = Number(elemAltura.value);
 
-        if( peso <= 0 || altura <= 0) {
+        if( peso <= 0 || altura <= 0 || Number.isNaN(peso) || Number.isNaN(altura) ) {
             alert('Digite um peso e uma altura corretamente.');
             throw 'Digite um peso e uma altura corretamente.';
         }
