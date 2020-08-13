@@ -23,6 +23,7 @@ li {
 body {
     margin: 0;
     padding: 0;
+    height: 100%;
     background-color: var(--primary-color);
     font-family: 'Open sans', sans-serif;
     font-size: 1.1em;
