@@ -230,3 +230,8 @@ if(6 > 1 && 6 < 12) {
     console.log('Seis é maior que um e 6 é menor que doze');
 }
 ```
+
+
+#### Exercício de IMC GABRIEL, Gif de como ficou
+
+![alt-text](https://github.com/gabrielnavas/course_js_ts_udemy_luiz_otavio/blob/master/javascript_logica_programacao/tabela_imc_gabriel/usando.gif)
