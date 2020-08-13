@@ -9,7 +9,13 @@
         const peso = Number(elemPeso.value);
         const altura = Number(elemAltura.value);
 
+        if( peso <= 0 || altura <= 0) {
+            alert('Digite um peso e uma altura corretamente.');
+            throw 'Digite um peso e uma altura corretamente.';
+        }
+
         const resultadoIMC = calcularIMC(peso, altura);
+
         return resultadoIMC;
     }
 
@@ -54,9 +60,6 @@
         const elemLiImc = document.querySelector(classImc);
         const elemLiResult = document.querySelector(classResultado);
 
-        console.log(elemLiImc);
-        console.log(elemLiResult);
-
         function setCssElementosLi({ elemento, innerHTML, fontWeight, color }) {
             elemento.innerHTML = innerHTML;
             elemento.style.fontWeight = fontWeight;
@@ -64,12 +67,12 @@
         }
 
         function limparResultadoAnterior() {
-            
-            for(let numero=1; numero <= 6; numero++) {
+
+            for (let numero = 1; numero <= 6; numero++) {
 
                 const elemImcClear = document.querySelector(`#imc_op${numero}`);
                 const elemRespClear = document.querySelector(`#resul_op${numero}`);
-                
+
                 setCssElementosLi({
                     elemento: elemImcClear,
                     innerHTML: elemImcClear.innerHTML.replace('-&gt; ', ''),
