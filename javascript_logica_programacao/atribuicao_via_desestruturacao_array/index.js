@@ -35,10 +35,28 @@ console.log(primeiroNome, terceiroNome, quintoNome); // Gabriel João Fátima
 // Complicando um pouco
 
 const numerosArray = [
-    [1,2,3],
-    [4,5,6],
-    [7,8,9],
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
 ]
 
-const [, [,,seis]] = numerosArray;
+const [, [, , seis]] = numerosArray;
 console.log(seis); // 6
+
+
+// Setando valor padrao na desestruturação de array
+const valores = ['Valor 1', undefined, 'Valor 3', 'Valor 4'];
+
+const [, segundoValor = 'Valor 2'] = valores;
+console.log(segundoValor); // Valor 2
+
+
+
+// Desestruturação de array não é ponteiros, os valores são cópias
+
+const carros = ['Fusca', 'Gol', 'Ferrari'];
+let [fuscao] = carros;
+
+fuscao = 'Fusquete';
+console.log(carros[0]); // Fusca
+console.log(fuscao); // Fusquete

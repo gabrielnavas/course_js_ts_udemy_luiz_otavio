@@ -625,3 +625,157 @@ const numerosArray = [
 const [, [,,seis]] = numerosArray;
 console.log(seis); // 6
 ```
+
+##### Setando valor padrao na desestruturação de array
+
+```javascript
+const valores = ['Valor 1', undefined, 'Valor 3', 'Valor 4'];
+
+const [, segundoValor = 'Valor 2'] = valores;
+console.log(segundoValor); // Valor 2
+```
+
+
+##### Desestruturação de array não é ponteiros, os valores são cópias
+
+```javascript
+const carros = ['Fusca', 'Gol', 'Ferrari'];
+let [fuscao] = carros;
+
+fuscao = 'Fusquete';
+console.log(carros[0]); // Fusca
+console.log(fuscao); // Fusquete
+```
+
+
+
+
+## Atribuição via desestruturação de Objeto
+
+```javascript
+const pessoa = {
+    nome: 'Gabriel',
+    sobrenome: 'Navas',
+    idade: 27,
+    endereco: {
+        rua: 'Av Brasil',
+        numero: 320,
+    },
+};
+
+const { nome } = pessoa;
+console.log(nome); // Gabriel
+```
+
+##### Setar valor padrão na desestruturação de um atributo não atribuido do objeto 
+
+```javascript
+const pessoa = {
+    nome: undefined,
+    sobrenome: 'Navas',
+    idade: 27,
+    endereco: {
+        rua: 'Av Brasil',
+        numero: 320,
+    },
+};
+
+const { nome = 'Jão', sobrenome } = pessoa;
+console.log(nome, sobrenome); // Gabriel
+```
+
+###### Dando um alias para uma variável desestruturada de uma objeto 
+
+```javascript
+const pessoa = {
+    nome: 'Gabriel',
+    sobrenome: 'Navas',
+    idade: 27,
+    endereco: {
+        rua: 'Av Brasil',
+        numero: 320,
+    },
+};
+
+const { nome: n } = pessoa;
+console.log(n); // 'Maria'
+```
+
+
+##### É possível colocar um valor padrão em apelidos de variáveis não definidas  
+
+```javascript
+const pessoa = {
+    nome: undefined,
+    sobrenome: 'Navas',
+    idade: 27,
+    endereco: {
+        rua: 'Av Brasil',
+        numero: 320,
+    },
+};
+
+
+const { nome: n = 'Outro Valor' } = pessoa;
+console.log(n); // 'Maria'
+```
+
+
+##### Desestruturacao é feito uma cópia do valor, não é ponteiro
+
+```javascript
+const pessoa = {
+    nome: undefined,
+    sobrenome: 'Navas',
+    idade: 27,
+    endereco: {
+        rua: 'Av Brasil',
+        numero: 320,
+    },
+};
+
+nome = 'Ricardo';
+console.log(nome); // Ricardo
+console.log(pessoa.nome); // undefined
+```
+
+##### Desestruturando atributos que esta dentro de outro objeto dentro do objeto 
+
+
+```javascript
+const pessoa = {
+    nome: undefined,
+    sobrenome: 'Navas',
+    idade: 27,
+    endereco: {
+        rua: 'Av Brasil',
+        numero: 320,
+    },
+};
+
+
+const { endereco, endereco: { rua, numero } } = pessoa;
+
+console.log(endereco); // objeto completo do endereco
+console.log(rua, numero); // rua e numero desestruturado
+```
+
+##### Pegando resto do objeto
+
+```javascript
+const pessoa = {
+    nome: 'Gabriel',
+    sobrenome: 'Navas',
+    idade: 27,
+    endereco: {
+        rua: 'Av Brasil',
+        numero: 320,
+    },
+};
+
+
+const { nome, ...resto } = pessoa;
+
+console.log(nome); //nome
+console.log(resto); //resto do objeto
+```
