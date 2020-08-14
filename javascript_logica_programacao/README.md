@@ -846,3 +846,69 @@ for(let i=0 ; i < frutas.length ; i++) {
 // Pêra 
 // Uva
 ```
+
+## For in
+
+#### Iterando sobre um array com for in em um array
+
+```javascript
+const frutas = ['maçã', 'pera', 'banana', 'melancia'];
+
+for(let indexFruta in frutas) {
+    console.log(indexFruta);
+}
+
+// Saída:
+/*
+0
+1
+2
+3
+*/
+
+for(let indexFruta in frutas) {
+    console.log(frutas[indexFruta]);
+}
+
+// Saída:
+/*
+maçã
+pera
+banana
+melancia
+*/
+```
+
+
+#### Iterando sobre um objeto
+
+```javascript
+const pessoa = {
+    nome: 'Gabriel',
+    idade: 48,
+    nacionalidade: 'Japonês',
+}
+
+for(let indexPes in pessoa) {
+    console.log(indexPes);
+}
+
+// Saída printa as chaves do objeto
+/*
+nome
+idade
+nacionalidade
+*/
+
+for(let indexPes in pessoa) {
+    console.log(pessoa[indexPes]);
+}
+
+// Saída printa os valores das chaves do objeto
+
+/*
+nome
+idade
+nacionalidade
+*/
+```
