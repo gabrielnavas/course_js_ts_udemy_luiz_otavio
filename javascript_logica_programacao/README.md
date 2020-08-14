@@ -480,3 +480,86 @@ console.log(diaSemana, diaSemanaString); //2 Terça-Feira
 ## Exercício Switch/Case
 
 ![Imagem do resultado](https://github.com/gabrielnavas/course_js_ts_udemy_luiz_otavio/blob/master/javascript_logica_programacao/exercicio_switch_date_gabriel/img_exercicio_switch_case_gabriel.png)
+
+## Mais diferencas entre var e let
+
+### let tem escopo de bloco
+### var tem escopo de função
+
+##### Não posso ter variáveis declaradas duas vezes usando o let
+
+```javascript
+let nome = 'Gabriel';
+// let nome = 'Gabriel'; //SyntaxError: Identifier 'nome' has already been declared
+```
+
+##### Usando var, posso redeclarar quantas vezes eu quiser
+
+```javascript
+var nome2 = 'Navas 1';
+var nome2 = 'Navas 2';
+var nome2 = 'Navas 3';
+var nome2 = 'Navas 4';
+
+console.log(nome2); //Navas 4
+```
+
+##### Posso redeclarar com let em outro escopo com sem problemas
+
+```javascript
+const verdade = true;
+
+if(verdade) {
+    let nome = 'sou outro escopo';
+    console.log(nome);
+
+    if(verdade) {
+        let nome = 'sou outro escopo dentro de outro escopo';
+        console.log(nome);
+        
+        if(verdade) {
+            let nome = 'sou outro escopo dentro de outro escopo, dentro de outro escopo';
+            console.log(nome);
+        }
+    }
+}
+```
+
+##### Var é pego o ultimo declarado, independente do escopo
+
+```javascript
+let nome = 'Gabriel';
+var nome2 = 'Navas 1';
+var nome2 = 'Navas 2';
+var nome2 = 'Navas 3';
+var nome2 = 'Navas 4';
+
+const verdade = true;
+
+if (verdade) {
+    let nome = 'sou outro escopo';
+    var nome2 = 'Navas 5';
+
+    if (verdade) {
+        let nome = 'sou outro escopo dentro de outro escopo';
+        var nome2 = 'Navas 6';
+
+        if (verdade) {
+            let nome = 'sou outro escopo dentro de outro escopo, dentro de outro escopo';
+            var nome2 = 'Navas 7';
+        }
+    }
+}
+
+console.log(nome, nome2); // Gabriel Navas 7
+```
+
+## Hoisting
+
+```javascript
+console.log(varDeclaradaDepois); //undefined
+// console.log(letDeclaradaDepois); //ReferenceError: Cannot access 'letDeclaradaDepois' before initialization
+
+var varDeclaradaDepois = 'Gabriel var';
+let letDeclaradaDepois = 'Gabriel let';
+```
