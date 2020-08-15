@@ -912,3 +912,56 @@ idade
 nacionalidade
 */
 ```
+
+
+#### Iterando numa lista de objeto
+
+```javascript
+
+const pessoas = [
+    {
+        nome: 'Gabriel',
+        endereco: {
+            rua: 'Rua das flores',
+            numero: 31,
+            cidade: {
+                nome: 'Presidente Prudente',
+            },
+        },
+    }, {
+        nome: 'Gabriel',
+        endereco: {
+            rua: 'Rua das flores',
+            numero: 31,
+            cidade: {
+                nome: 'Presidente Prudente',
+            },
+        },
+    },
+]
+
+for (let pessoa of pessoas) {
+    console.log(pessoa);
+}
+
+/*
+Saída
+
+{
+  nome: 'Gabriel',
+  endereco: {
+    rua: 'Rua das flores',
+    numero: 31,
+    cidade: { nome: 'Presidente Prudente' }
+  }
+}
+{
+  nome: 'Gabriel',
+  endereco: {
+    rua: 'Rua das flores',
+    numero: 31,
+    cidade: { nome: 'Presidente Prudente' }
+  }
+}
+*/
+```
