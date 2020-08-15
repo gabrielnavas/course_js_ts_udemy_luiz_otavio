@@ -1160,7 +1160,7 @@ catch(error) {
 }
 ```
 
-#### Para mostrar a linha do erro, igual normalmente seria
+#### Para mostrar a linha do erro, normalmente seria
 
 ```javascript
 function somaComErro(x, y) {
@@ -1180,4 +1180,53 @@ catch(error) {
     // agora tem a menssagem, a stack toda do erro, e a linha, path do arquivo, etc
     console.log(error); 
 }
+```
+
+## Tratando try catch
+
+#### Try/Catch dentro de Try
+
+```javascript
+try {
+    console.log('Abri um arquivo');
+    console.log('Manipulei o arquivo');
+
+    try {
+        console.log(variavelNaodeClarada);
+    }
+    catch(err) {
+        throw 'Erro dentro do try dentro do try';
+    }
+}
+catch (ex) {
+    console.log(ex);
+}
+finally {
+    console.log('Fechei o arquivo');
+}
+/* 
+Saída
+Abri um arquivo
+Manipulei o arquivo
+Erro dentro do try dentro do try
+Fechei o arquivo
+*/
+```
+
+#### TypeError
+
+```javascript
+function retornaHora(data) {
+    if (data && !(data instanceof Date)) {
+        throw new TypeError('Não é instância de data');
+    }
+
+    if (!data) {
+        data = new Data();
+    }
+
+    return data.toLocaleTimeString('pt-br', { hour12: false });
+}
+
+let hour = retornaData(100) // TypeError: Não é instância de data
 ```
