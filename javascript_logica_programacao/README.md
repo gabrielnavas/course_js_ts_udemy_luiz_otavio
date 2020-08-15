@@ -1047,7 +1047,6 @@ while (i < 10) {
         break; //sai do laço
     }
 }
-
 /*
 Saída:
 0
