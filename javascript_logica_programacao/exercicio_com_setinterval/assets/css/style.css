@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+    --primary-color: rgb(12, 121, 129);
+    --primary-color-darker: rgb(7, 78, 83);
+    --primary-color-on: rgb(6, 24, 26);
+}
+
+* {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+    font-family: 'Open sans', sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+    height: 100%;
+}
+
+.container {
+    max-width: 640px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 10px;
+    height: 70%;
+}
+
+form input, form label, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form input {
+    font-size: 24px;
+    height: 50px;
+    padding: 0 20px;
+}
+
+form input:focus {
+    /* outline: 1px solid var(--primary-color); */
+    border-radius: 7px;
+    border-color: var(--primary-color);
+}
+
+form button {
+    border: none;
+    background-color: var(--primary-color);
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 700;
+    height: 50px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--primary-color-darker);
+}
+
+form button:active {
+    background-color: var(--primary-color-on);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.botoes {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 40%;
+}
+
+.botoes button {
+    width: auto;
+    height: 35px;
+    border-radius: 14%;
+    border-width: 1.9px;
+    border-style: solid;
+    border-color: var(--primary-color-darker);
+    cursor: pointer;
+    
+    margin-left: 5px;
+}
+
+.botoes > button:hover {
+    border-color: initial;
+    background-color: var(--primary-color-darker);
+}
+
+.botoes > button:active {
+    border-color: var(--primary-color-darker);
+    background-color: var(--primary-color-darker-on);
+}
+
+.hora {
+    font-size: 120px;
+    font-family: 'Gloria Hallelujah', cursive;
+    width: 100%;
+}
