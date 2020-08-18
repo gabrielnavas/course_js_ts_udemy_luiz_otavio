@@ -545,4 +545,4 @@ console.log(pessoa.nomeCompleto); // João Carlos da Silva Soares
 
 ## Minha calculadora do exercício feito pelo Gabriel Navas
 
-![Imagem do resultado](https://github.com/gabrielnavas/course_js_ts_udemy_luiz_otavio/blob/master/javascript_logica_programacao/exercicio_switch_date_gabriel/img_exercicio_switch_case_gabriel.png)
+![Minha calculadora](https://github.com/gabrielnavas/course_js_ts_udemy_luiz_otavio/blob/master/funcoes_avancado/exercicio_calculadora_gabriel/example_calc_gabriel.gif)
