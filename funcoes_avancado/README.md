@@ -321,3 +321,118 @@ const funcao2 = retornaFuncao('João');
 console.dir(funcao()); // Gabriel
 console.dir(funcao2()); //João
 ```
+
+## Callback
+
+#### Exemplo simples de chamada de função
+```javascript
+function f1 () {
+    console.log('f1');
+}
+
+function f2 () {
+    console.log('f2');
+}
+
+function f3 () {
+    console.log('f3');
+}
+
+f1();
+f2();
+f3();
+console.log('Olá mundo!');
+/*
+f1
+f2
+f3
+Olá mundo!
+*/
+```
+
+#### Exemplo de utilização de callback
+
+```javascript
+function f1ComEsperaCallback (callback) {
+    setTimeout(function() {
+        console.log('f1');
+        if(callback) callback()
+    }, 500);
+}
+
+function f2ComEsperaCallback (callback) {
+    setTimeout(function() {
+        console.log('f2');
+        if(callback) callback()
+    }, 1000);
+}
+
+function f3ComEsperaCallback (callback) {
+    setTimeout(function() {
+        console.log('f3');
+        if(callback) callback()
+        console.log('Olá mundo');
+    }, 800);
+}
+
+
+//CallbackHell >:|
+f1ComEsperaCallback(
+    f2ComEsperaCallback(
+        f3ComEsperaCallback
+    )
+);
+/*
+f1
+f2
+f3
+Olá mundo. 
+*/
+```
+
+
+#### Resolvendo o callbackHell
+
+```javascript
+
+function f1 (callback) {
+    setTimeout(function() {
+        console.log('f1');
+        if(callback) callback()
+    }, 500);
+}
+
+function f2 (callback) {
+    setTimeout(function() {
+        console.log('f2');
+        if(callback) callback()
+    }, 1000);
+}
+
+function f3 (callback) {
+    setTimeout(function() {
+        console.log('f3');
+        if(callback) callback()
+    }, 800);
+}
+
+f1(f1Callback);
+
+function f1Callback() {
+    f2(f2Callback);
+}
+
+function f2Callback() {
+    f3(f3Callback);
+}
+
+function f3Callback() {
+    console.log('Olá mundo');
+}
+/*
+f1
+f2
+f3
+Olá mundo. 
+*/
+```
