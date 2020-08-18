@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+    --primary-color: rgb(12, 121, 129);
+    --primary-color-darker: rgb(7, 78, 83);
+    --primary-color-on: rgb(6, 24, 26);
+}
+
+* {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+    font-family: 'Open sans', sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 640px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+
+form input, form label, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form input {
+    font-size: 24px;
+    height: 50px;
+    padding: 0 20px;
+}
+
+form input:focus {
+    /* outline: 1px solid var(--primary-color); */
+    border-radius: 7px;
+    border-color: var(--primary-color);
+}
+
+form button {
+    border: none;
+    background-color: var(--primary-color);
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 700;
+    height: 50px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: var(--primary-color-darker);
+}
+
+form button:active {
+    background-color: var(--primary-color-on);
+}
+
+.calculadora {
+    width: 440px;
+    height: auto;
+    text-align: center;
+}
+
+.display .input-display{
+    width: 430px;
+    height: 100px;
+
+    border: 2px solid rgb(138, 138, 138, 0.9);
+
+    font-size: 45px;
+    text-align: right;
+    padding: 0 15px;
+}
+
+.display .input-display:hover{
+    border: 3px solid rgba(34, 34, 34, 0.9);
+}
+
+
+.display .input-display:focus{
+    background-color: lightslategray;
+    border: 2px solid rgb(0,0,0, 0.9);
+}
+
+
+.teclas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.teclas > button {
+    width: 100px;
+    height: 70px;
+
+    font-weight: bold;
+    font-size: 25px;
+    margin: 5px;
+
+    border: 2px solid rgb(138, 138, 138, 0.9);
+}
+
+.teclas > button:hover {
+    border: 2px solid rgb(0,0, 0, 0.5);
+    background-color: rgb(83, 83, 83);
+    color: #FFF;
+    font-size: 30px;
+}
+
+.teclas > button:active {
+    border: 10px solid rgb(0,0, 0, 0.5);
+    background-color: rgb(83, 83, 83);
+    color: #FFF;
+    font-size: 50px;
+    transition-duration: 0.3s;
+}
