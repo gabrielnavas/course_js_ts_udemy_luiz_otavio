@@ -254,3 +254,51 @@ function criaMultiplicador(multiplicador) {
 const duasXquatro = criaMultiplicador(2)(4); 
 console.log(duasXquatro); // 8
 ```
+
+## Escopo léxico
+
+
+##### Exemplo de escopo léxico, a função conhece todo o escopo dela e o global, neste exemplo
+
+```javascript
+const nome = 'Luiz';
+
+function falaNome() {
+    console.log(nome);
+}
+
+falaNome(); // Luiz
+```
+
+#### Continua mostrando Luiz, pois o escopo léxico não mudou
+
+```javascript
+const nome = 'Luiz';
+
+function falaNome() {
+    console.log(nome);
+}
+
+function usaFalaNome() {
+    const nome = 'Gabriel'
+    falaNome();
+}
+usaFalaNome(); // Luiz
+```
+
+
+#### A função continua tendo o mesmo escopo léxico, mas pega a variável mais proima, pois tem duas variáveis em seu escopo.
+
+```javascript
+const nome = 'Luiz';
+
+function falaNome() {
+    const nome = 'Gabriel'
+    console.log(nome);
+}
+
+function usaFalaNome() {
+    falaNome();
+}
+usaFalaNome(); // Gabriel
+```
