@@ -169,3 +169,88 @@ const conta = (operador, acumulador, ...numeros) => {
 
 conta('+', 0, 20, 30, 40, 50);
 ```
+
+#### Retorna um valor
+
+```javascript
+function soma(n1, n2) {
+    return n1 + n2;
+}
+const result = soma(1, 2);
+console.log(result); // 3
+```
+
+
+#### Não retorna nada
+
+```javascript
+const dizOla = function() {
+    console.log('Olá')
+}
+console.log(dizOla()); // undefined 
+```
+
+
+#### Exemplo, retorna um objeto
+
+```javascript
+function criarPessoa(nome, sobrenome) {
+    return { nome, sobrenome };
+}
+
+const pessoa = criarPessoa('gabriel', 'silva');
+console.log(pessoa); // { nome: 'gabriel', sobrenome: 'silva' }
+```
+
+
+#### Retornar uma função de uma função
+
+```javascript
+function printaNome(nome, sobrenome) {
+    console.log(nome);
+    
+    function pritaSobrenome() {
+        return sobrenome;
+    }
+    
+    return pritaSobrenome;
+}
+
+const retornaSobrenome = printaNome('Gabriel', 'Navas'); // Gabriel 
+const sobrenome = retornaSobrenome(); // Navas
+console.log(sobrenome); 
+```
+
+#### Exemplo de código repitido
+
+```javascript
+function duplica(n) {
+    return n * 2;
+}
+
+function triplica(n) {
+    return n * 3;
+}
+
+function quadriplica(n) {
+    return n * 4;
+}
+
+console.log(duplica(2)); // 4
+console.log(triplica(2)); // 6
+console.log(quadriplica(2)); // 8
+```
+
+
+#### Agora sem repitir
+
+```javascript
+function criaMultiplicador(multiplicador) {
+    return function (n) {
+        return n * multiplicador;
+    }
+} 
+
+const duasXquatro = criaMultiplicador(2)(4); 
+console.log(duasXquatro); // 8
+```
