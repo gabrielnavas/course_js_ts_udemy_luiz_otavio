@@ -577,3 +577,44 @@ console.log(typeof p1); // object
 console.log(typeof Pessoa); // function
 ```
 
+
+## Recursividade
+
+
+#### Exemplo básico
+
+```javascript
+function ateDez(num) {
+    if (num > 5) return;
+
+    console.log(num);
+    num=num+1;
+    ateDez(num);
+}
+
+ateDez(0);
+
+/*
+0
+1
+2
+3
+4
+5
+*/
+```
+
+#### Outro exemplo 
+
+```javascript
+function printarCaracteres(nome, index) {
+    if(index < nome.length) {
+        console.log(nome[index]);
+    
+        index = index + 1;
+        printarCaracteres(nome, index);
+    }
+}
+
+printarCaracteres('Gabriel', 0);
+```
