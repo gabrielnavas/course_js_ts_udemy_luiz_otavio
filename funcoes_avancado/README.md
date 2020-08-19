@@ -546,3 +546,34 @@ console.log(pessoa.nomeCompleto); // João Carlos da Silva Soares
 ## Minha calculadora do exercício feito pelo Gabriel Navas
 
 ![Minha calculadora](https://github.com/gabrielnavas/course_js_ts_udemy_luiz_otavio/blob/master/funcoes_avancado/exercicio_calculadora_gabriel/example_calc_gabriel.gif)
+
+
+## Funções construtoras
+
+
+#### Exemplo básico
+
+```javascript
+function Pessoa(nome, idade) {
+
+    // atributos privados
+    const souUmAtributoInterno;
+    const souUmaFuncInterna = function() {
+        console.log(souUmAtributoInterno);
+    }
+
+    this.nome = nome;
+    this.idade = idade;
+
+    this.nomeEidade = function() {
+        return `${this.nome} ${this.idade}`;
+    }
+}
+
+const p1 = new Pessoa('Gabriel', 22); 
+console.log(p1.nome); // Gabriel
+console.log(p1.nomeEidade()); // Gabriel 22
+console.log(typeof p1); // object
+console.log(typeof Pessoa); // function
+```
+
