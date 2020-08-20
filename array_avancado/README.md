@@ -206,3 +206,22 @@ console.log(pessoasQueTerminaComLetraA);
 ]
 */
 ```
+
+## Método Map do array
+
+#### Modifica o array
+
+```javascript
+const numeros = [5, 50, 80, 1, 2, 3, 4, 5, 6, 7, 11, 15, 22, 27];
+
+const numerosEmDobro = numeros.map((valor, indice, array) => valor * 2);
+console.log(numerosEmDobro);
+
+/*
+[
+  10, 100, 160,  2,  4,  6,
+   8,  10,  12, 14, 22, 30,
+  44,  54
+]
+*/
+```
