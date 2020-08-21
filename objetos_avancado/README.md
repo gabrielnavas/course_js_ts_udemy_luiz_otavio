@@ -243,7 +243,6 @@ console.log(produto.estoque); // 55
 ```
 
 
-
 #### Getter e setter função factory
 
 ```javascript
@@ -261,4 +260,108 @@ function criaPessoa(nome) {
 const pessoa = criaPessoa('Gabriel');
 console.log(pessoa); // { nome: [Getter/Setter] }
 console.log(pessoa.nome); // Gabriel
+```
+
+## Métodos úteis de objetos
+
+
+#### Objet.values
+
+```javascript
+const pessoa = { nome: 'Gabriel', idade: 55 };
+const chaves = Object.values(pessoa);
+
+console.log(chaves); // [ 'Gabriel', 55 ]
+```
+
+
+#### Objet.entries
+
+```javascript
+const pessoa = { nome: 'Gabriel', idade: 55 };
+const chaves = Object.entries(pessoa);
+
+console.log(chaves); // [ [ 'nome', 'Gabriel' ], [ 'idade', 55 ] ]
+
+// iterar sobre o entries
+for(let [chave, valor] of Object.entries(pessoa)) {
+    console.log(`chave: ${chave}, valor ${valor}`)
+}
+/* Saída: 
+chave: nome, valor Gabriel
+chave: idade, valor 55
+*/
+```
+
+
+#### Objet.assign(des, any) (copiar objeto)
+
+```javascript
+const produto = { nome: 'Caneca', preco: 18.55 };
+
+const copiaProduto = Object.assign({}, produto, { material: 'madeira' });
+copiaProduto.nome = 'Cadeira';
+
+console.log(produto); // { nome: 'Caneca', preco: 18.55 }
+console.log(copiaProduto); // { nome: 'Cadeira', preco: 18.55, material: 'madeira' }
+```
+
+
+#### Objet.getOwnPropertyDescriptor(o ,'prop')
+
+```javascript
+const pessoa = { nome: 'Gabriel', idade: 55 };
+const ownPropertyDescr = Object.getOwnPropertyDescriptor(pessoa, 'nome');
+console.log(ownPropertyDescr);
+/*
+{
+  value: 'Gabriel',
+  writable: true,
+  enumerable: true,
+  configurable: true
+}
+*/
+```
+
+
+#### ...spread (copiar objeto)
+
+```javascript
+const outroProduto = {...produto, material: 'plástico'};
+outroProduto.nome = 'Copo';
+
+console.log(produto); // { nome: 'Caneca', preco: 18.55 }
+console.log(outroProduto); // { nome: 'Copo', preco: 18.55, material: 'plástico' }
+```
+
+
+#### Objet.keys
+
+```javascript
+const pessoa = { nome: 'Gabriel', idade: 55 };
+const chaves = Object.keys(pessoa);
+
+console.log(chaves); //[ 'nome', 'idade' ]
+```
+
+
+#### Objet.freeze
+
+```javascript
+// Ja existe exemplo pra cima
+```
+
+
+#### Objet.defineProperties
+
+```javascript
+// Ja existe exemplo pra cima
+
+```
+
+
+#### Objet.defineProperty
+
+```javascript
+// Ja existe exemplo pra cima
 ```
