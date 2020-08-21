@@ -65,7 +65,7 @@ const pessoas = [
     { nome: 'Navas', idade: 21 },
 ];
 
-const funcFilter = (pessoaVelha, pessoa) => 
+const funcFilter = (pessoaVelha, pessoa) =>
     pessoaVelha.idade < pessoa.idade ? pessoa : pessoaVelha;
 
 const maisVelha = pessoas.reduce(funcFilter);
