@@ -176,3 +176,10 @@ const tablet = new Tablet('Nokia', true);
 tablet.ligar(); // Você sobrescreveu o método ligar.
 console.log(tablet); // Tablet { nome: 'Nokia', ligado: false, temWifi: true }Tablet { nome: 'Nokia', ligado: false, temWifi: true }
 ```
+
+
+## Métodos estáticos
+
+```javascript
+
+```
