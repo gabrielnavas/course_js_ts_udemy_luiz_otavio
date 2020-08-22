@@ -514,7 +514,7 @@ console.log(produto2.preco); // 800000
 ## Algorítmo checar CPF
 
 <p>
-// \/\/\/\/\/ COMO FAZER \/\/\/\/\/\/\/\/ //
+<h3>COMO FAZER</h3>
 
 // 705.484.450-52 070.987.720-03
 /*
