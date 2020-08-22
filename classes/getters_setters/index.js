@@ -1,37 +1,4 @@
-## Criando classes
 
-#### As funções já ficam no prototype
-
-```javascript
-class Pessoa {
-    constructor(nome, sobrenome) {
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-    }
-
-    falar() {
-        console.log(`${this.nome} está falando.`);
-    }
-
-    comer() {
-        console.log(`${this.nome} está comendo.`);
-    }
-
-    beber() {
-        console.log(`${this.nome} está bebendo.`);
-    }
-}
-
-const pessoa = new Pessoa();
-console.log(pessoa);
-```
-
-
-## Getters e Setters
-
-#### Exemplo, classe Carro
-
-```javascript
 // Atributo privado 
 const _velocidade = Symbol('velocidade');
 
@@ -46,8 +13,8 @@ class Carro {
     }
 
     set velocidade(valor) {
-        if(typeof valor !== 'number') return;
-        if(valor > this.limite || valor < 0) return;
+        if (typeof valor !== 'number') return;
+        if (valor > this.limite || valor < 0) return;
         this[_velocidade] = valor;
     }
 
@@ -56,12 +23,12 @@ class Carro {
     }
 
     acelerar() {
-        if(this._velocidade >= this.limite) return;
+        if (this._velocidade >= this.limite) return;
         this[_velocidade]++;
     }
 
     freiar() {
-        if(this._velocidade <= 0) return;
+        if (this._velocidade <= 0) return;
         this[_velocidade]--;
     }
 }
@@ -77,13 +44,10 @@ console.log(carro.velocidade); // 4
 carro.velocidade = 199;
 carro.velocidade = 251; // não seta
 console.log(carro.velocidade); // 199
-```
 
-#### Exemplo, classe Pessoa
 
-##### Classe pessoa
+/// Classe pessoa
 
-```javascript
 class Pessoa {
     constructor(nome, sobrenome) {
         this.nome = nome;
@@ -115,4 +79,3 @@ console.log(pessoa.nomeCompleto); // Gabriel Navas
 
 pessoa.nomeCompleto = 'João da Silva';
 console.log(pessoa.nomeCompleto); // João da Silva
-```
