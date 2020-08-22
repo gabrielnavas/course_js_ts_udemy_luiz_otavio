@@ -389,3 +389,122 @@ const data = new Date(); // <- Date = Função construtora
 console.dir(ferrari1);
 console.dir(ferrari2);
 ```
+
+## Prototype
+
+```javascript
+// Construtora -> molde (classe)
+
+function Carro(nome, motor) {
+    // this.nome = nome;
+    // this.motor = motor;
+
+    // this.nomeCompleto = 
+}
+
+
+Carro.prototype.nome = 'Ferrari';
+Carro.prototype.motor = 7.0;
+Carro.prototype.nomeCompleto = () => this.nome + ' ' + this.motor;
+
+// instância
+const ferrari1 = new Carro('Ferrari1', 7.0); // <- Carro = Função construtora
+const data = new Date(); // <- Date = Função construtora
+
+console.dir(ferrari1);
+console.dir(ferrari2);
+```
+
+
+## Manipulando prototype
+
+
+#### Apontar o prototype de um objeto literal para outro objeto literal
+
+```javascript
+const objA = {
+    chaveA: 'chaveA',
+};
+
+const objB = {
+    chaveB: 'chaveB',
+};
+
+Object.setPrototypeOf(objB, objA);
+
+console.log(objB.__proto__); // { chaveA: 'chaveA' }
+console.log(objB.__proto__.chaveA); // chaveA
+```
+
+#### Criando um objeto constructor e pegando o prototype de outro
+
+```javascript
+const objA = {
+    chaveA: 'chaveA',
+};
+
+const objB = {
+    chaveB: 'chaveB',
+};
+
+const objC = new Object();
+
+Object.setPrototypeOf(objB, objA);
+Object.setPrototypeOf(objC, objB);
+
+console.log(objB.__proto__.chaveA); // chaveA
+console.log(objC.__proto__.__proto__.chaveA); // chaveA
+```
+
+## prototype exemplo real
+
+```javascript
+function Produto(nome, preco) {
+    this.nome = nome;
+    this.preco = preco;
+}
+
+Produto.prototype.aumento = function(percentual) {
+    this.preco = this.preco + (this.preco * percentual);
+}
+
+Produto.prototype.desconto = function(percentual) {
+    this.preco = this.preco - (this.preco * percentual);
+}
+
+const produto1 = new Produto('Camiseta', 100.00);
+produto1.aumento(0.10);
+console.log(produto1.preco); // 110
+
+produto1.desconto(0.20);
+console.log(produto1.preco); // 88
+```
+
+
+## Setar prototype de outro objeto
+
+```javascript
+function Produto(nome, preco) {
+    this.nome = nome;
+    this.preco = preco;
+}
+
+Produto.prototype.aumento = function(percentual) {
+    this.preco = this.preco + (this.preco * percentual);
+}
+
+Produto.prototype.desconto = function(percentual) {
+    this.preco = this.preco - (this.preco * percentual);
+}
+
+const produto1 = new Produto('Camiseta', 100.00);
+
+const produto2 = {
+    nome: 'Ferrari',
+    preco: 1000000,
+}
+
+Object.setPrototypeOf(produto2, Produto.prototype);
+produto2.desconto(0.20);
+
+console.log(produto2.preco); // 800000
