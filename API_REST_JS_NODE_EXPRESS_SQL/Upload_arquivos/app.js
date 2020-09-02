@@ -1,4 +1,4 @@
-const dotenv = require('dotenv');
+const dotenv = require('../tratando_arquivo_enviados/node_modules/dotenv');
 dotenv.config();
 
 require('./src/database');

@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('../../../tratando_arquivo_enviados/node_modules/dotenv').config();
 
 module.exports = {
     dialect: 'postgres',
