@@ -1,6 +1,8 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
+const { resolve } = require('path');
+
 require('./src/database');
 
 const express = require('express');
@@ -21,6 +23,7 @@ class App {
     middlewares = () => {
         this.app.use(express.urlencoded({ extended: true }));
         this.app.use(express.json());
+        this.app.use(express.static(resolve(__dirname, 'uploads'))); //diretório de arquivos estáticos
     }
 
     routes = () => {
@@ -39,7 +42,7 @@ ANOTAÇÕES
 
     - Criar uma migration: npx sequelize migration:create --name=nomeDaTabela
     - Migrar para o banco: npx sequelize db:migrate
-    
+
     - Criar seeds: npx sequelize seed:generate --name criar-usuarios
     - Migrar para o banco os seed: npx sequelize db:seed:all
 

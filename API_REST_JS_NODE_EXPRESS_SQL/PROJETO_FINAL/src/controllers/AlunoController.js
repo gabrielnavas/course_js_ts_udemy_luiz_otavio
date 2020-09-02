@@ -23,7 +23,7 @@ class AlunoController {
             order: [['id', 'DESC'], [Foto, 'id', 'DESC']], //ordem decrescente
             include: {
                 model: Foto,
-                attributes: ['filename'],
+                attributes: ['url', 'filename'],
             }
         });
         return res.send(alunos);
@@ -43,7 +43,7 @@ class AlunoController {
                 order: [['id', 'DESC'], [Foto, 'id', 'DESC']], //ordem decrescente
                 include: {
                     model: Foto,
-                    attributes: ['filename'],
+                    attributes: ['url', 'filename'],
                 }
             });
 

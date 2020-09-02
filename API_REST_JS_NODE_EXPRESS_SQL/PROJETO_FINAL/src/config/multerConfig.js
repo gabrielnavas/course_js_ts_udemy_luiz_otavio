@@ -15,7 +15,7 @@ module.exports = {
     },
     storage: multer.diskStorage({
         destination: (req, file, callback) => {
-            const pathUpload = resolve(__dirname, '..', '..', 'uploads');
+            const pathUpload = resolve(__dirname, '..', '..', 'uploads', 'images');
             callback(null, pathUpload);
         },
         filename: (req, file, callback) => {
