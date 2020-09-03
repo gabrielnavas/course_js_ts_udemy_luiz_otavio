@@ -18,23 +18,25 @@
 
 .main > form {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 
     width: 100%;
-    padding: 25px 0 25px 0;
+    padding: 15px 0 15px 0;
 }
 
 .main h1 {
     color: #2f54f5;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+    font-family: monospace, serif;
 }
 
 form > input {
-    height: 35px;
-    width: 85%;
+    width: 55%;
+    height: 45px;
     margin: 5px 0px 5px 0px;
-    padding: 0 20px 0 20px;
+    padding: 2px 20px 2px 20px;
+    border-color: #1f54f5;
     border-radius: 15px;    
     font-size: 35px;
 }
@@ -46,18 +48,24 @@ form > input:focus {
 }
 
 form > button {
-        width: 50%;
+    width: 10%;
     height: 40px;
-
+    
+    
     font-size: 20px;
     font-weight: bold;
 
     border: none;
 
-    margin: 5px 0 5px 0;
+    margin: 5px 0 5px 10%;
     border-radius: 15px;
     color: #eee;
-    background-color: #1f54f5;
+    background-color: rgb(252, 78, 78);
+    cursor: pointer;
+    transition: all 600ms;
+    outline: none;
+
+
 }
 
 form > button:active {
@@ -99,13 +107,15 @@ ul li {
     margin: 5px 0 0 0;
     padding-left: 25px;
 
-    background: #4f54f5;
+    background: #2f54f5;
     width: 80%;
     height: 35px;
 
     font-size: 23px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
+
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2)
 
 
 }
@@ -115,8 +125,19 @@ ul li button {
     height: 25px;
     width: 25px;
 
-    background: lightsalmon;
     border: none;
     border-radius: 2px;
+
+    font-weight: bold;
+    font-size: 19px;
+
+    cursor: pointer;
+
+    transition: all 600ms;
+    outline: none;
+
 }
 
+ul li button:active {
+    background: #2f54f5;
+}
