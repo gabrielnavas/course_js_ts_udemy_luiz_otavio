@@ -6,6 +6,8 @@ import {
     GrEdit, GrClose, FaPlus
 } from 'react-icons/all';
 
+const TAREFAS = '@LISTA_TAREFAS';
+
 export default props => {
 
     const [tarefas, setTarefas] = React.useState([]);
@@ -14,26 +16,53 @@ export default props => {
 
     const [tarefaFormSelected, setTarefaFormSelected] = React.useState('');
 
+
+    function recuperarTarefas() {
+        const tarefasStr = localStorage.getItem(TAREFAS);
+
+        if (tarefasStr !== null) {
+            const newTarefasArray = JSON.parse(tarefasStr);
+            setTarefas(newTarefasArray);
+        }
+    }
+
+    function gravarTarefas() {
+        let tarefasAntigas = localStorage.getItem(TAREFAS);
+
+        if (tarefasAntigas === null) {
+            tarefasAntigas = [];
+        }
+
+        const novasTarefas = JSON.stringify([...tarefasAntigas, ...tarefas]);
+
+        localStorage.setItem(TAREFAS, novasTarefas);
+    }
+
     function handleTarefas() {
 
-        if (!tarefaForm) {
+        const tarefa = tarefaForm.trim();
+        console.log(tarefas);
+
+        if (!tarefa) {
             setErrors('Digite um valor');
             return;
         }
 
-        if(tarefaFormSelected) {
+        // update
+        if (tarefaFormSelected) {
             setTarefaFormSelected('');
-            changeItem(tarefaForm);
+            changeItem(tarefa);
+            setTarefaForm('');
+            // gravarTarefas();
             return;
         }
 
-
-        if (tarefas.includes(tarefaForm)) {
+        if (tarefas.includes(tarefa)) {
             setErrors('tarefa já existe');
         } else {
             setErrors('');
-            setTarefas([...tarefas, tarefaForm]);
-
+            setTarefas([...tarefas, tarefa]);
+            // gravarTarefas();
         }
     }
 
@@ -41,7 +70,7 @@ export default props => {
         const newTarefas = tarefas
             .map(t => t === tarefaFormSelected ? novaTarefa : t);
 
-        setTarefas(newTarefas);    
+        setTarefas(newTarefas);
     }
 
     function deleteItem(tarefa) {
@@ -57,7 +86,6 @@ export default props => {
 
         <div className="main">
             <h1>Lista de tarefas</h1>
-
             <form action="#">
                 <input type="text" onChange={(e) => setTarefaForm(e.target.value)} />
 
@@ -69,7 +97,7 @@ export default props => {
 
             <ul>
                 {
-                    tarefas.map(tarefa => (
+                    tarefas && tarefas.map(tarefa => (
                         <li key={tarefa}>
                             <h5>{tarefa}</h5>
                             <div className="actions">

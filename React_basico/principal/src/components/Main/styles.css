@@ -32,12 +32,8 @@
 }
 
 form > input {
-    width: 55%;
+    width: 60%;
     height: 45px;
-    margin: 5px 0px 5px 0px;
-    padding: 2px 20px 2px 20px;
-    border-color: #1f54f5;
-    border-radius: 15px;    
     font-size: 35px;
 }
 
@@ -49,23 +45,18 @@ form > input:focus {
 
 form > button {
     width: 10%;
-    height: 40px;
-    
+    height: 48px;
     
     font-size: 20px;
     font-weight: bold;
 
     border: none;
-
-    margin: 5px 0 5px 10%;
-    border-radius: 15px;
+    
     color: #eee;
     background-color: rgb(252, 78, 78);
     cursor: pointer;
     transition: all 600ms;
     outline: none;
-
-
 }
 
 form > button:active {
