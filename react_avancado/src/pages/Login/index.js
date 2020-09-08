@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { Container } from './styles';
+import * as exampleActions from '../../store/modules/example/actions';
 
 function Login() {
     const dispatch = useDispatch();
@@ -9,10 +10,7 @@ function Login() {
     function handleClick(e) {
         e.preventDefault();
 
-        dispatch({
-            type: 'BOTAO_CLICADO',
-            payload: {email: 'bla@asdasd', senha:'123'}
-        })
+        dispatch(exampleActions.clicaBotao());
     }
 
     return (
