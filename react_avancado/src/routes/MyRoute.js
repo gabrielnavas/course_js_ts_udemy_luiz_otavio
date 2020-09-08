@@ -1,13 +1,14 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import Page404 from '../pages/Page404';
 
-function routes({ component: Component, isClosed, ...rest }) {
+function MyRoute({ component: Component, isClosed, ...rest }) {
 
     const isLoggedId = false;
 
-    if(isClosed) {
+    if (isClosed) {
         return (
             <Route {...rest} component={Page404} />
         )
@@ -29,4 +30,13 @@ function routes({ component: Component, isClosed, ...rest }) {
     );
 }
 
-export default routes;
+export default MyRoute;
+
+MyRoute.propTypes = {
+    isClosed: false,
+}
+
+MyRoute.propTypes = {
+    component: PropTypes.oneOfType([PropTypes.element, PropTypes.func]).isRequired,
+    isClosed: PropTypes.bool,
+}
