@@ -23,7 +23,7 @@ class TokenController {
 
             const isValid = await user.passwordIsValid(password)
 
-            if ( !isValid) {
+            if (!isValid) {
                 return res.status(401).json({
                     errors: ['Senha inválida.']
                 });
@@ -34,7 +34,11 @@ class TokenController {
                 expiresIn: process.env.TOKEN_EXPIRATION,
             });
 
-            return res.json({ token });
+            return res.json({
+                token, user: {
+                    nome: user.nome, id, email
+                }
+            });
         }
         catch (e) {
 

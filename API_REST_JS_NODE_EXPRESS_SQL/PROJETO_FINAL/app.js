@@ -1,5 +1,6 @@
-const dotenv = require('dotenv');
-dotenv.config();
+const cors = require('cors');
+const helmet = require('helmet');
+
 
 const { resolve } = require('path');
 
@@ -12,6 +13,19 @@ const tokensRoutes = require('./src/routes/tokenRoute');
 const alunosRoutes = require('./src/routes/alunoRoutes');
 const fotosRoutes = require('./src/routes/fotoRoutes');
 
+const originFree = [
+    'localhost:3000',
+];
+
+const corsOptions = {
+    origin: function(origin, callback) {
+        if(originFree.indexOf(origin) !== -1 || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('not allowed by CORS'));
+        }
+    }
+}
 
 class App {
     constructor() {
@@ -21,6 +35,8 @@ class App {
     }
 
     middlewares = () => {
+        this.app.use(cors(corsOptions));
+        this.app.use(helmet());
         this.app.use(express.urlencoded({ extended: true }));
         this.app.use(express.json());
         this.app.use(express.static(resolve(__dirname, 'uploads'))); //diretório de arquivos estáticos
