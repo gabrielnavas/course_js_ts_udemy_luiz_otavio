@@ -1,3 +1,5 @@
+import * as types from '../types';
+
 
 const initialState = {
     botaoClicado: false,
@@ -6,13 +8,10 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch (action.type) {
-        case 'BOTAO_CLICADO':
+        case types.BOTAO_CLICADO:
             const newState = {...state};
             newState.botaoClicado = !newState.botaoClicado;
             return newState;
-
-        case 'BOTAO_CLICADO2':
-            return state;
 
         default:
             return state;
