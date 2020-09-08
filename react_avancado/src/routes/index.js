@@ -7,10 +7,9 @@ import Page404 from '../pages/Page404';
 
 function Routes() {
 
-
     return (
         <Switch>
-            <MyRoute exact path='' component={Login} />
+            <MyRoute exact path='/' component={Login} />
             <MyRoute exact path='/login' component={Login} isClosed />
             <MyRoute exact path='*' component={Page404} />
         </Switch>

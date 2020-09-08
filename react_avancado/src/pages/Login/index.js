@@ -13,11 +13,6 @@ function Login() {
             type: 'BOTAO_CLICADO',
             payload: {email: 'bla@asdasd', senha:'123'}
         })
-
-        dispatch({
-            type: 'BOTAO_CLICADO2',
-            payload: {email: 'bla@asdasd', senha:'123'}
-        })
     }
 
     return (

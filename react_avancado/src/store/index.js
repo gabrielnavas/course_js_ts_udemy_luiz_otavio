@@ -8,7 +8,6 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'BOTAO_CLICADO':
-            console.log('botao clicado', state);
             const newState = {...state};
             newState.botaoClicado = !newState.botaoClicado;
             return newState;

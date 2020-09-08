@@ -8,13 +8,7 @@ function MyRoute({ component: Component, isClosed, ...rest }) {
 
     const isLoggedId = false;
 
-    if (isClosed) {
-        return (
-            <Route {...rest} component={Page404} />
-        )
-    }
-
-    if (isClosed && !isLoggedId) {
+    if ( isClosed && !isLoggedId ) {
         return (
             <Redirect
                 to={{
