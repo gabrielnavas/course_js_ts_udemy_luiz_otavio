@@ -14,7 +14,7 @@ function MyRoute({ component: Component, isClosed, ...rest }) {
         )
     }
 
-    if (isClosed || !isLoggedId) {
+    if (isClosed && !isLoggedId) {
         return (
             <Redirect
                 to={{
