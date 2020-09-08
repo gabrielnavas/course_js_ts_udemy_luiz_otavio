@@ -3,14 +3,18 @@ import React from 'react';
 
 import GlobalStyle, { Container } from './styles/GlobalStyles';
 import Login from './pages/Login';
+import Header from './components/Header';
 
 function App() {
   return (
-    <Container>
-      <GlobalStyle />
-      <Login />
-    <button type="button">Enviar</button>
-    </Container>
+    <>
+      <Header />
+      <Container>
+        <Login />
+        <GlobalStyle />
+        <button type="button">Enviar</button>
+      </Container>
+    </>
   );
 }
 
