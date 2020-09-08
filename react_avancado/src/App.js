@@ -9,6 +9,7 @@ function App() {
     <Container>
       <GlobalStyle />
       <Login />
+    <button type="button">Enviar</button>
     </Container>
   );
 }
