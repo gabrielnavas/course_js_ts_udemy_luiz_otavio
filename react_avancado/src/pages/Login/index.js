@@ -2,7 +2,19 @@ import React from 'react';
 
 import { Container } from './styles';
 
+import axios from '../../services/axios';
+
 function Login() {
+
+    React.useEffect(() => {
+        async function getData() {
+            const response = await axios.get('/alunos');
+            console.log(response);
+        }
+
+        getData();
+    }, []);
+
     return (
         <Container isRed={false}>
             <strong>

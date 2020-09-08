@@ -7,13 +7,7 @@ import GlobalStyle from './styles/GlobalStyles';
 import Header from './components/Header';
 import Routes from './routes';
 
-import {toast} from 'react-toastify';
-
 function App() {
-  
-  toast.success('oie, sucesso');
-  toast.error('oie, sucesso');
-  toast.info('oie, sucesso');
   
   return (
     <Router history={history}>
