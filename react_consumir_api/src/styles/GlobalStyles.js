@@ -22,7 +22,8 @@ export default createGlobalStyle`
         height: 100%;
     }
 
-    button: {
+    button {
+        width: 100%;
         cursor: pointer;
         background: ${colors.primaryColor};
         border: none;
@@ -30,18 +31,19 @@ export default createGlobalStyle`
         padding: 10px 20px;
         border-radius: 4px;
         font-weight: 700;
+        transition: all 300ms;
     }
-
+    button:hover {
+        filter: brightness(75%);
+    }
     a {
         text-decoration: none;
-        color: primaryDarkColor
+        color: ${colors.primaryColor};
     }
-
     ul {
         list-style: none;
     }
 
-    
     body .Toastify .Toastify__toast-container .Toastify__toast--success {
         background: ${colors.successColor};
     }
@@ -56,11 +58,10 @@ export default createGlobalStyle`
 `;
 
 export const Container = styled.section`
-    max-width: 360px;
+    max-width: 480px;
     background: #fff;
     margin: 30px auto;
     padding: 30px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    text-align: center;
     font-weight: bold;
 `;

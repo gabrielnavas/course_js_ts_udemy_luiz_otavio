@@ -1,5 +1,34 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  
+export const AlunoContainer = styled.div`
+    margin-top: 20px;
+    
+    div {
+        display: flex;  
+        justify-content: space-between;
+        align-items: center;     
+        padding: 4px 0;
+    }
+
+    div + div {
+        border-top: 1px solid #eee;
+    }
 `;
+
+export const ProfilePicture = styled.div`
+    img {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+    }
+`;
+
+export const Actions = styled.div`
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;     
+
+    width: 40px;
+`;
+
+
