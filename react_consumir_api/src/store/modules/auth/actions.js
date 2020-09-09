@@ -14,6 +14,7 @@ export function loginSuccess(payload) {
     };
 }
 
+// deslocar o User
 export function loginFailure(payload) {
     return {
         type: types.LOGIN_FAILURE,

@@ -1,20 +1,13 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-import Page404 from '../pages/Page404';
+import { useSelector } from 'react-redux';
 
 function MyRoute({ component: Component, isClosed, ...rest }) {
 
-    const isLoggedId = false;
+    const isLoggedId = useSelector(state => state.auth.isLoggedIn);
 
-    if ( isClosed ) {
-        return (
-            <Route {...rest} component={Page404} />
-        )
-    }
-
-    if ( isClosed && !isLoggedId ) {
+    if (isClosed && !isLoggedId) {
         return (
             <Redirect
                 to={{
