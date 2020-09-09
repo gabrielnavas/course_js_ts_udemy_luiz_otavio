@@ -14,7 +14,7 @@ const alunosRoutes = require('./src/routes/alunoRoutes');
 const fotosRoutes = require('./src/routes/fotoRoutes');
 
 const originFree = [
-    'localhost:3000',
+    'http://localhost:3000'
 ];
 
 const corsOptions = {
