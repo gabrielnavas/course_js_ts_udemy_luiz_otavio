@@ -17,11 +17,11 @@ export const Form = styled.form`
         font-size: 18px;
         border: 1px solid #ddd;
         padding: 0 10px;
+        margin-top: 3px;
         border-radius: 4px;
         
         &:focus {
             border: 1px solid ${colors.primaryColor};
         }
     }
-
 `;
