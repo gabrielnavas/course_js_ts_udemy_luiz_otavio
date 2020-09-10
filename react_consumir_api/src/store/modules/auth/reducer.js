@@ -14,7 +14,9 @@ export default function (state = initialState, action) {
 
     switch (action.type) {
         case types.LOGIN_REQUEST: {
-            return state;
+            const newState = {...state};
+            newState.isLoading = true;
+            return newState;
         }
 
         case types.LOGIN_SUCCESS: {
@@ -24,6 +26,7 @@ export default function (state = initialState, action) {
             newState.token = token;
             newState.user = user;
             newState.isLoggedIn = true;
+            newState.isLoading = false;
 
             console.log('REDUCER SUCCESS', newState);
             return newState;
