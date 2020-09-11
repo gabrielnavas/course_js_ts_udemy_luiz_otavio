@@ -13,19 +13,27 @@ import Routes from './routes';
 function App() {
 
   return (
-    <Provider store={store}>
-      <PersistGate persistor={persistor}>
+
+    //  usar useSelector e useDispatch em qualquer componente 
+    < Provider store={store} >
+
+      {/* persistir dados do redux no localstorage */}
+      < PersistGate persistor={persistor} >
+
+        {/* poder direcionar para qualquer url e armazenar ela */}
         <Router history={history}>
           <Header />
           <Routes />
           <GlobalStyle />
+
+          {/* mandar mensagem de alerta em qualquer componente */}
           <ToastContainer
             autoClose={3000}
             className="toast-container"
           />
         </Router>
-      </PersistGate>
-    </Provider>
+      </PersistGate >
+    </Provider >
   );
 }
 

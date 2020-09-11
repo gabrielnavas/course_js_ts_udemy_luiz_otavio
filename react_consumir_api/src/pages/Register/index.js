@@ -1,22 +1,40 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 import { isEmail } from 'validator';
-import { get } from 'lodash';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { Container } from '../../styles/GlobalStyles';
 import { Form } from './styles';
-import axios from '../../services/axios';
-import history from '../../services/history';
+import * as actions from '../../store/modules/auth/actions';
 
 import Loading from '../../components/Loading';
 
 function Register() {
+    const {
+        id,
+        nome: nomeStorad,
+        email: emailStorad
+    } = useSelector(state => state.auth.user);
 
-    const [isLoading, setIsLoading] = React.useState(false);
+    const dispatch = useDispatch();
+
+    const isLoading = useSelector(state => state.auth.isLoading);
 
     const [nome, setNome] = React.useState('');
     const [email, setEmail] = React.useState('');
     const [senha, setSenha] = React.useState('');
+
+    React.useEffect(() => {
+
+        function setDataEdit() {
+            if (!id) return;
+    
+            setNome(nomeStorad);
+            setEmail(emailStorad);
+        }
+
+        setDataEdit();
+    }, [id, nomeStorad, emailStorad]);
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -33,43 +51,23 @@ function Register() {
             toast.error('Nome deve ter entre 3 e 255 caracteres');
         }
 
-        if (senha.length < 6 || senha.length > 50) {
-            formErrors = true;
-            toast.error('Senha deve ter entre 6 e 255 caracteres');
+        if (!id) {
+            if (senha.length < 6 || senha.length > 50) {
+                formErrors = true;
+                toast.error('Senha deve ter entre 6 e 255 caracteres');
+            }
         }
 
         if (formErrors) return;
 
-        setIsLoading(true);
-
-        try {
-            await axios.post('/users', {
-                nome, email, senha,
-            });
-            
-            toast.success('Você fez seu cadastro.');
-            setIsLoading(false);
-
-            history.push('/login');
-
-        } catch (e) {
-            const status = get(e, 'response.status', 0);
-            const errors = get(e, 'response.data.errors', []);
-            console.log('erros: ', errors);
-            console.log('status: ', status);
-            console.log('obj erros: ', e);
-
-            errors.map( toast.error )
-            setIsLoading(false);
-
-        }
+        dispatch(actions.registerRequest({ nome, email, senha, id }));
     }
 
     return (
         <Container isRed={false}>
-        <Loading isLoading={isLoading} />
+            <Loading isLoading={isLoading} />
 
-            <h1>Crie sua conta</h1>
+            <h1>{id ? 'Editar dados' : 'Crie sua conta'}</h1>
 
             <Form onSubmit={handleSubmit}>
 
@@ -103,7 +101,7 @@ function Register() {
                     />
                 </label>
 
-                <button type="submit">Criar minha conta</button>
+                <button type="submit">{id ? 'Editar meus dados' : 'Criar minha conta'}</button>
             </Form>
 
         </Container>
