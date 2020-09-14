@@ -1,6 +1,6 @@
 const cors = require('cors');
 const helmet = require('helmet');
-
+const delay = require('express-delay');
 
 const { resolve } = require('path');
 
@@ -37,6 +37,10 @@ class App {
     middlewares = () => {
         this.app.use(cors(corsOptions));
         this.app.use(helmet());
+        
+        // CUIDADO COM ISSO!!
+        //this.app.use(delay(2000));
+
         this.app.use(express.urlencoded({ extended: true }));
         this.app.use(express.json());
         this.app.use(express.static(resolve(__dirname, 'uploads'))); //diretório de arquivos estáticos
